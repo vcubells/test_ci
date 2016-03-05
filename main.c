@@ -10,7 +10,7 @@ int main(int argc, const char * argv[]) {
 
     for (dia = Domingo; dia <= Sabado; ++dia)
     {
-        printf("%d, ", dia);
+        printf("%d \n", dia);
     }
     return 0;
 }
