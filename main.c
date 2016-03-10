@@ -12,5 +12,8 @@ int main(int argc, const char * argv[]) {
     {
         printf("%d \n", dia);
     }
+    
+    int a
+    
     return 0;
 }
