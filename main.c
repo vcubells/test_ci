@@ -13,7 +13,7 @@ int main(int argc, const char * argv[]) {
         printf("%d \n", dia);
     }
     
-    int a
+    int a = 0;
     
     return 0;
 }
