@@ -1,3 +1,6 @@
 language: c
 compiler: gcc
 script: gcc main.c
+addons:
+    code_climate:
+        repo_token: b506516044394c042df14d19fda6bc0b145e9d1ac2ba012881d551db833b20b2
