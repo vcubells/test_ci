@@ -4,7 +4,7 @@ enum DiasSemana {
     Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado
 };
 
-int main(int argc, const char * argv[]) {
+int main() {
 
     enum DiasSemana dia;
 
