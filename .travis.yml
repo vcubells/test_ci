@@ -1,6 +1,35 @@
-language: c
-compiler: gcc
-script: gcc main.c
+#language: c
+#compiler: gcc
+#script: gcc main.c
+#addons:
+#    code_climate:
+#        repo_token: b506516044394c042df14d19fda6bc0b145e9d1ac2ba012881d551db833b20b2
+
+
+dist: trusty
+sudo: false
+
 addons:
-    code_climate:
+  code_climate:
         repo_token: b506516044394c042df14d19fda6bc0b145e9d1ac2ba012881d551db833b20b2
+  sonarqube:
+    token:
+      secure: "e9946fd145e0f621ee0855c3ef840d54ec369501"
+
+script:
+  - make clean
+  # Wraps the compilation with the Build Wrapper to generate configuration (used
+  # later by the SonarQube Scanner) into the "bw-output" folder
+  - build-wrapper-linux-x86-64 --out-dir bw-output make all
+  # Execute some tests
+  - make test
+  # And finally run the SonarQube analysis - read the "sonar-project.properties"
+  # file to see the specific configuration
+  - sonar-scanner
+
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
+
+notifications:
+  email: false
